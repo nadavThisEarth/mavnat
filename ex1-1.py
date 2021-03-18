@@ -18,13 +18,13 @@ def first_line():
 def lgn():  
     print("\n"+'{:10s}'.format("log(n)"), end =" ")
     for time in times:
-        x = format((time/ms), ".2e")
+        x = format((time/ms), ".3e")
         print('{:25s}'.format("2 ** ( "+str(x) + " )"), end = " ")
 
 def sqrt_n():
     print("\n\n"+'{:10s}'.format("sqrt(n)"), end =" ")
     for time in times:
-        x = format(math.floor((time/ms)**2), ".2e")
+        x = format(math.floor((time/ms)**2), ".3e")
         print('{:25s}'.format(str(x)), end =" ")
 def n():
     print("\n\n"+'{:10s}'.format("n"), end = " ")
