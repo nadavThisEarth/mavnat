@@ -4,7 +4,7 @@ import math
 
 ### ----  CONSTANTS  ---- ###
 
-ms = 10**-6   # microseconds constant (with relation to second)
+ms = 10 ** -6   # microseconds constant (with relation to second)
 
 times = [ 1, 60, 60*60, 24*(60*60), 30*(24*(60*60)), 365*(24*(60*60)), 100*(365*(24*(60*60)))] #time periods as multiples of 1 second
 ##  NOTICE - a year is calculated as 365 days which IS NOT 12 months * 30 days
