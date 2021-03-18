@@ -4,7 +4,7 @@ import math
 
 ### ----  CONSTANTS  ---- ###
 
-ms = 10 ** -6   # microseconds constant (with relation to second)
+micros = 10 ** -6   # microseconds constant (with relation to second)
 
 times = [ 1, 60, 60*60, 24*(60*60), 30*(24*(60*60)), 365*(24*(60*60)), 100*(365*(24*(60*60)))] #time periods as multiples of 1 second
 ##  NOTICE - a year is calculated as 365 days which IS NOT 12 months * 30 days
@@ -18,26 +18,26 @@ def first_line():
 def lgn():  
     print("\n"+'{:10s}'.format("log(n)"), end =" ")
     for time in times:
-        x = format((time/ms), ".3e")
+        x = format((time/micros), ".3e")
         print('{:25s}'.format("2 ** ( "+str(x) + " )"), end = " ")
 
 def sqrt_n():
     print("\n\n"+'{:10s}'.format("sqrt(n)"), end =" ")
     for time in times:
-        x = format(math.floor((time/ms)**2), ".3e")
+        x = format(math.floor((time/micros)**2), ".3e")
         print('{:25s}'.format(str(x)), end =" ")
 def n():
     print("\n\n"+'{:10s}'.format("n"), end = " ")
     for time in times:
-        x = format(math.floor((time/ms)), ".2e")
+        x = format(math.floor((time/micros)), ".2e")
         print('{:25s}'.format(str(x)), end = " ")
         
 def nlogn():
     # using NEWTON - RAPHSON METHOD
     print("\n\n"+'{:10s}'.format("nlog(n)"), end = " ")
     sensitivity = 0
-    func = lambda x: x * math.log(x,2) - time/ms
-    deriv = lambda x: math.log(x,2) + 1/(math.log(2))
+    func = lambda x: x * math.log(x,2) - time/micros     #the function whose root we wish to find
+    deriv = lambda x: math.log(x,2) + 1/(math.log(2)) # derivative of the above function
     for time in times:       
         x = 10 ** 2 #initial guess 
         y = func(x)
@@ -50,15 +50,15 @@ def nlogn():
 def n_squared():
     print("\n\n"+'{:10s}'.format("n ** 2"), end = " ")
     for time in times:
-        x = math.floor(math.sqrt(time/ms))
+        x = math.floor(math.sqrt(time/micros))
         print('{:25s}'.format(str(x)),end = " ")
         
 def n_cubed():
     # using NEWTON - RAPHSON METHOD (because naive use of pow function causes floating-point representation issues)
     print("\n\n"+'{:10s}'.format("n ** 3"), end = " ")
     sensitivity = 1
-    deriv = lambda x: 3 *(x ** 2)
-    func = lambda x: x ** 3 - time/ms
+    func = lambda x: x ** 3 - time/micros   #the function whose root we wish to find
+    deriv = lambda x: 3 *(x ** 2)           # derivative of the above function
     for time in times:
         x = 10 ** 5  #initial guess 
         y = func(x)
@@ -71,7 +71,7 @@ def n_cubed():
 def two_power_n():
     print("\n\n"+'{:10s}'.format("2 ** n"), end = " ")
     for time in times:
-        x = math.floor(math.log((time/ms),2))
+        x = math.floor(math.log((time/micros),2))
         print('{:25s}'.format(str(x)), end = " ")
 
 def n_fact():
@@ -79,7 +79,7 @@ def n_fact():
     for time in times:
         x = 1
         count = 1
-        while(x <= time/ms):
+        while(x <= time/micros):
             count += 1
             x *= count
         count -= 1 #reducing count by 1 to get last value smaller than a bound
