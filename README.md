@@ -4,7 +4,7 @@ code solutions for tasks in "introduction to data structures and algorithms"
 
 ## ex 1-1.py details
    This file outputs the solution for CLRS problem 1-1
-   ###### important notifications
+   ###### notes
    - **WIDEN YOUR OUTPUT CONSOLE** as much as possible to allow proper display of the data
    - **a year** is calculated as **365 days** which is **doesn't equal** 12 months * 60 days ( =360 days)
    - **nlogn()** uses _Newton-Raphson Method_ to quicken time complexity
