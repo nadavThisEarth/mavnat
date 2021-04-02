@@ -6,7 +6,7 @@ code solutions for tasks in "introduction to data structures and algorithms"
    This file outputs the solution for CLRS problem 1-1
    
    - **WIDEN YOUR OUTPUT CONSOLE** as much as possible to allow proper display of the data
-   - **a year** is calculated as **365 days** which is **doesn't equal** 12 months * 60 days ( =360 days)
+   - **a year** is calculated as **365 days** which **doesn't equal** 12 months * 60 days ( =360 days)
    - **nlogn()** uses _Newton-Raphson Method_ to quicken time complexity
    - **n_cubed()** uses _Newton-Raphson Method_   **instead of pow function** , which causes inaccuracies due to floating-point arithmetic 
 ### n_cubed() - floating-point arithmetic issue explanation:
